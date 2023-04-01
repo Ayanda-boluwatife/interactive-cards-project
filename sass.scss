@@ -1,0 +1,342 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+}
+.desktop{
+    position: absolute;
+    z-index: -10;
+}
+.card-front {
+    position: absolute;
+    z-index: -9;
+}
+.card {
+    margin-top: 187px;
+    margin-left: 164px;
+}
+.logo {
+    margin-top: 28px;
+    margin-left: 32px;
+}
+.flex {
+    display: flex;
+}
+.card-number {
+    margin-top: 64px;
+    height: 36px;    
+    font-family: 'Space Grotesk';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 36px;
+    letter-spacing: 3.42222px;
+    color: #FFFFFF;
+}
+.card-number-1 {
+    margin-left: 32px;
+}
+.card-number-2, .card-number-3, .card-number-4 {
+    margin-left: 10px;
+}
+.flex-2 {
+    display: flex;
+    justify-content: space-between;
+    width: 383.19px;
+    margin-top: 25.5px;
+    margin-left: 32px;
+}
+.name, .time, .code {
+    height: 18px;
+    font-family: 'Space Grotesk';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #FFFFFF;    
+}
+.card-back {
+    position: absolute;
+    z-index: -9;
+}
+.back {
+    width: 447px;
+    height: 245px;
+    margin-top: 63.5px;
+    margin-left: 258px;
+    display: flex;
+}
+.code {
+    margin-top: 111px;
+    margin-left: 358px;
+}
+.block-2, .block-3 {
+    margin-left: 127px;
+}
+.nom {
+    height: 15px;
+    font-family: 'Space Grotesk';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #21092F;    
+}
+.cardholder {
+    margin-top: 275px;    
+}
+.card-num {
+    margin-top: 26px;
+}
+.card-time {
+    margin-top: 26px;
+}
+.card-code {
+    margin-top: 26px;
+    margin-left: 20px;
+}
+.input {
+    margin-top: 9px;
+    height: 45px;
+    border-radius: 8px;
+    padding-left: 16px;
+    font-family: 'Space Grotesk';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 23px;
+    color: #21092F;
+}
+.input-name {
+    display: block;
+    width: 381px;
+}
+.input-number {
+    display: block;
+    width: 381px;
+}
+.input-month, .input-year {
+    width: 80px;
+}
+.input-year {
+    margin-left: 10px;
+}
+.input-code {
+    width: 191px;
+    margin-left: 20px;
+}
+.btn {
+    margin-top: 40px;
+    background: #21092F;
+    border-radius: 8px;
+    width: 381px;
+    height: 53px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.p-btn {
+    height: 23px;
+    font-family: 'Space Grotesk';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 23px;
+    color: #FFFFFF;
+}
+.input:focus {
+    outline: 1px solid #6348FE;
+    border: none;
+}
+.error {
+    margin-top: 8px;
+    height: 15px;
+    font-family: 'Space Grotesk';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    color: #FF5050;    
+}
+.left {
+    .error {
+        margin-left: 20px;
+    }
+}
+.complete {
+    margin-left: 151px;
+    margin-top: 305px;
+}
+.p-h1 {
+    margin-top: 35px;
+    width: 381px;
+    height: 36px;
+    font-family: 'Space Grotesk';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 36px;
+    text-align: center;
+    letter-spacing: 3.42222px;
+    color: #21092F;
+    text-transform: uppercase;
+}
+.p-text {
+    margin-top: 16px;
+    height: 23px;
+    font-family: 'Space Grotesk';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 23px;
+    text-align: center;
+    color: #8F8694;    
+}
+.btn-2 {
+    margin-top: 48px;
+    width: 381px;
+    height: 53px;
+    background: #21092F;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.p-btn-2 {
+    height: 23px;
+    font-family: 'Space Grotesk';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 23px;
+    color: #FFFFFF;    
+}
+.mobile {
+    display: none;
+}
+
+@media screen and (max-width: 400px) {
+    .desktop{
+        display: none;
+    }
+    .mobile {
+        display: block;
+        position: absolute;
+        z-index: -10;
+    }        
+    .card-front {
+        z-index: -8;
+        width: 286px;
+        height: 157px;
+    }
+    .card {
+        margin-top: 126px;
+        margin-left: 16px;
+    }
+    .logo {
+        width: 54px;
+        height: 30px;
+        margin-top: 17.6px;
+        margin-left: 16px;
+    }
+    .card-number {
+        margin-top: 37px;
+        height: 23px;    
+        font-size: 18px;
+        line-height: 23px;
+        letter-spacing: 2.2px;
+    }
+    .card-number-1 {
+        margin-left: 19px;
+    }
+    .card-number-2, .card-number-3, .card-number-4 {
+        margin-left: 7px;
+    }
+    .flex-2 {
+        width: 245.11px;
+        margin-top: 17px;
+        margin-left: 19px;
+    }
+    .name, .time, .code {
+        height: 11px;
+        font-size: 9px;
+        line-height: 11px;
+        letter-spacing: 1.28571px;
+    }
+    .card-back {
+        width: 286px;
+        height: 157px;
+    }
+    .back {
+        position: absolute;
+        z-index: -9;
+        top: -26px;
+        margin-left: 73px;
+    }
+    .code {
+        margin-top: 73.64px;
+        margin-left: 228.98px;
+    }
+    .flex-3 {
+        display: block;
+    }
+    .block-2, .block-3 {
+        margin-left: 24px;
+    }
+    .cardholder {
+        margin-top: 48px;    
+    }
+    .card-num {
+        margin-top: 20px;
+    }
+    .card-time {
+        margin-top: 20px;
+    }
+    .card-code {
+        margin-top: 20px;
+        margin-left: 11px;
+    }
+    .input-name {
+        width: 327px;
+    }
+    .input-number {
+        width: 327px;
+    }
+    .input-month, .input-year {
+        width: 72px;
+    }
+    .input-year {
+        margin-left: 8px;
+    }
+    .input-code {
+        width: 164px;
+        margin-left: 11px;
+    }
+    .btn {
+        margin-top: 28px;
+        width: 327px;
+    }
+    .complete {
+        margin-left: 124px;
+        margin-top: 48px;
+    }
+    .p-h1 {
+        width: 327px;
+    }
+    .p-text {
+        width: 263px;
+        margin-left: 32px;
+    }
+    .btn-2 {
+        width: 327px;
+    }    
+}

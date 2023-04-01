@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="script.js"></script>
+  <title>Frontend Mentor | Interactive card details form</title>
+  <link rel="stylesheet" href="sass.css">
+</head>
+<body>
+  <div class="container">
+    <img src="./images/bg-main-desktop.png" alt="desktop" class="desktop">
+    <img src="./images/bg-main-mobile.png" alt="mobile" class="mobile">
+    <div class="flex flex-3">
+      <div class="">
+        <div class="card">
+          <img src="./images/bg-card-front.png" alt="card-front" class="card-front">
+          <img src="./images/card-logo.svg" alt="logo" class="logo">
+          <div class="flex">
+            <p class="card-number-1 card-number" id="card-number-1">
+              0000
+            </p>
+            <p class="card-number-2 card-number" id="card-number-2">
+              0000
+            </p>
+            <p class="card-number-3 card-number" id="card-number-3">
+              0000
+            </p>
+            <p class="card-number-4 card-number" id="card-number-4">
+              0000
+            </p>  
+          </div>
+          <div class="flex-2">
+            <p class="name" id="name">
+              Jane Appleseed
+            </p>
+            <p class="time">
+              <span id="month">00</span>/<span id="year">00</span>
+            </p>
+          </div>
+        </div>
+        <div class="back">
+          <img src="./images/bg-card-back.png" alt="card-back" class="card-back">
+          <p class="code" id="code">
+            000
+          </p>
+        </div>  
+      </div>
+      <div class="block-2">
+        <p class="nom cardholder">
+          Cardholder Name
+        </p>
+        <input placeholder="e.g. Jane Appleseed" type="text" class="input-name input" id="input-name">
+        <p class="error" id="name-error"></p>
+        <p class="nom card-num">
+          Card Number
+        </p>
+        <input placeholder="e.g. 1234 5678 9123 0000" type="number" class="input input-number" id="input-number">
+        <p class="error" id="number-error"></p>
+        <div class="flex">
+          <div class="right">
+            <p class="nom card-time">
+              Exp. Date (MM/YY)
+            </p>
+            <input placeholder="MM" type="number" class="input input-month" id="input-month">
+            <input placeholder="YY" type="number" class="input input-year" id="input-year">  
+            <p class="error" id="year-error"></p>
+          </div>
+          <div class="left">
+            <p class="nom card-code">
+              CVC
+            </p>
+            <input placeholder="e.g. 123" type="number" class="input input-code" id="input-code">
+            <p class="error" id="code-error"></p>
+          </div>  
+        </div>
+        <div class="btn">
+          <p class="p-btn">
+            Confirm
+          </p>
+        </div>
+      </div>  
+      <div class="block-3">
+        <img src="./images/icon-complete.svg" alt="complete" class="complete">
+        <p class="p-h1">
+          Thank you!
+        </p>
+        <p class="p-text">
+          We've added your card details
+        </p>
+        <div class="btn-2">
+          <p class="p-btn-2">
+            Continue
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    $("#name-error").hide();
+    $("#number-error").hide();
+    $("#month-error").hide();
+    $("#year-error").hide();
+    $("#code-error").hide();
+    const inputName = document.getElementById("input-name");
+    const nameError = document.getElementById("name-error");
+    const inputNumber = document.getElementById("input-number");
+    const numberError = document.getElementById("number-error");
+    const cardNumber1 = document.getElementById("card-number-1");
+    const cardNumber2 = document.getElementById("card-number-2");
+    const cardNumber3 = document.getElementById("card-number-3");
+    const cardNumber4 = document.getElementById("card-number-4");
+    const inputMonth = document.getElementById("input-month");
+    const monthError = document.getElementById("month-error");
+    const inputYear = document.getElementById("input-year");
+    const yearError = document.getElementById("year-error");
+    const inputCode = document.getElementById("input-code");
+    const codeError = document.getElementById("code-error");
+    const updateinputName = () => {
+      if (inputName.value.length < 1){
+        nameError.innerHTML = "Ismni kiritish shart!";
+        $("#input-name").css('outline', '1px solid #FF5050')
+        $("#input-name").css('border', 'none')
+        $("#name-error").show();
+      }
+      else {
+        $("#input-name").css('outline', '1px solid #6348FE')
+        $("#input-name").css('border', 'none')
+        nameError.innerHTML = "";
+        $("#name-error").hide();
+      }
+      let val = inputName.value;
+      document.getElementById("name").innerHTML = val;
+    }
+    const updateinputNumber = () => {
+      if (inputNumber.value.length < 1){
+        $("#input-number").css('outline', '1px solid #FF5050')
+        $("#input-number").css('border', 'none')
+        numberError.innerHTML = "Raqamni kiritish shart!";
+        $("#number-error").show();
+      }
+      else if (inputNumber.value.length > 16){
+        numberError.innerHTML = "Ortiqcha raqam yozdingiz!";
+        $("#input-number").css('outline', '1px solid #FF5050')
+        $("#input-number").css('border', 'none')
+        $("#number-error").show();
+      }
+      else {
+        numberError.innerHTML = "";
+        $("#input-number").css('outline', '1px solid #6348FE')
+        $("#input-number").css('border', 'none')
+        $("#number-error").hide();
+      }
+      let arr = []
+      for (let i = 0; i < 16; i + 4){
+        arr.push(inputNumber.value.slice(i, i+=4))
+      }
+      cardNumber1.innerHTML=arr[0]
+      cardNumber2.innerHTML=arr[1]
+      cardNumber3.innerHTML=arr[2]
+      cardNumber4.innerHTML=arr[3]
+    }
+    const updateinputMonth = () => {
+      if (inputMonth.value.length < 1){
+        yearError.innerHTML = "Muddatni kiritish shart!";
+        $("#input-month").css('outline', '1px solid #FF5050')
+        $("#input-month").css('border', 'none')
+        $("#year-error").show();
+      }
+      else if (inputMonth.value.length > 2){
+        yearError.innerHTML = "Ortiqcha raqam yozdingiz!";
+        $("#input-month").css('outline', '1px solid #FF5050')
+        $("#input-month").css('border', 'none')
+        $("#year-error").show();
+      }
+      else {
+        yearError.innerHTML = "";
+        $("#input-month").css('outline', '1px solid #6348FE')
+        $("#input-month").css('border', 'none')
+        $("#year-error").hide();
+      }
+      let val = inputMonth.value;
+      document.getElementById("month").innerHTML = val;
+    }
+    const updateinputYear = () => {
+      if (inputYear.value.length < 1){
+        yearError.innerHTML = "Muddatni kiritish shart!";
+        $("#input-year").css('outline', '1px solid #FF5050')
+        $("#input-year").css('border', 'none')
+        $("#year-error").show();
+      }
+      else if (inputYear.value.length > 2){
+        yearError.innerHTML = "Ortiqcha raqam yozdingiz!";
+        $("#input-year").css('outline', '1px solid #FF5050')
+        $("#input-year").css('border', 'none')
+        $("#year-error").show();
+      }
+      else {
+        yearError.innerHTML = "";
+        $("#input-year").css('outline', '1px solid #6348FE')
+        $("#input-year").css('border', 'none')
+        $("#year-error").hide();
+      }
+      let val = inputYear.value;
+      document.getElementById("year").innerHTML = val;
+    }
+    const updateinputCode = () => {
+      if (inputCode.value.length < 1){
+        codeError.innerHTML = "Parolni kiritish shart!";
+        $("#input-code").css('outline', '1px solid #FF5050')
+        $("#input-code").css('border', 'none')
+        $("#code-error").show();
+      }
+      else if (inputCode.value.length > 3){
+        codeError.innerHTML = "Ortiqcha raqam yozdingiz!";
+        $("#input-code").css('outline', '1px solid #FF5050')
+        $("#input-code").css('border', 'none')
+        $("#code-error").show();
+      }
+      else {
+        codeError.innerHTML = "";
+        $("#input-code").css('outline', '1px solid #6348FE')
+        $("#input-code").css('border', 'none')
+        $("#code-error").hide();
+      }
+      let val = inputCode.value;
+      document.getElementById("code").innerHTML = val;
+    }
+    inputName.addEventListener("input", updateinputName)
+    inputNumber.addEventListener("input", updateinputNumber)
+    inputMonth.addEventListener("input", updateinputMonth)
+    inputYear.addEventListener("input", updateinputYear)
+    inputCode.addEventListener("input", updateinputCode)
+  </script>
+</body>
+</html>
