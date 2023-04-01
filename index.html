@@ -118,7 +118,7 @@
     const codeError = document.getElementById("code-error");
     const updateinputName = () => {
       if (inputName.value.length < 1){
-        nameError.innerHTML = "Ismni kiritish shart!";
+        nameError.innerHTML = "pls!! input a valid name";
         $("#input-name").css('outline', '1px solid #FF5050')
         $("#input-name").css('border', 'none')
         $("#name-error").show();
@@ -136,11 +136,11 @@
       if (inputNumber.value.length < 1){
         $("#input-number").css('outline', '1px solid #FF5050')
         $("#input-number").css('border', 'none')
-        numberError.innerHTML = "Raqamni kiritish shart!";
+        numberError.innerHTML = "invalid num!!, pls input a valid one";
         $("#number-error").show();
       }
       else if (inputNumber.value.length > 16){
-        numberError.innerHTML = "Ortiqcha raqam yozdingiz!";
+        numberError.innerHTML = "invalid num!!, pls input a valid one";
         $("#input-number").css('outline', '1px solid #FF5050')
         $("#input-number").css('border', 'none')
         $("#number-error").show();
@@ -162,13 +162,13 @@
     }
     const updateinputMonth = () => {
       if (inputMonth.value.length < 1){
-        yearError.innerHTML = "Muddatni kiritish shart!";
+        yearError.innerHTML = "invalid month!!, pls input a valid month";
         $("#input-month").css('outline', '1px solid #FF5050')
         $("#input-month").css('border', 'none')
         $("#year-error").show();
       }
       else if (inputMonth.value.length > 2){
-        yearError.innerHTML = "Ortiqcha raqam yozdingiz!";
+        yearError.innerHTML = "invalid month!!, pls input a valid month";
         $("#input-month").css('outline', '1px solid #FF5050')
         $("#input-month").css('border', 'none')
         $("#year-error").show();
@@ -184,13 +184,13 @@
     }
     const updateinputYear = () => {
       if (inputYear.value.length < 1){
-        yearError.innerHTML = "Muddatni kiritish shart!";
+        yearError.innerHTML = "invalid year!!, pls input a valid year";
         $("#input-year").css('outline', '1px solid #FF5050')
         $("#input-year").css('border', 'none')
         $("#year-error").show();
       }
       else if (inputYear.value.length > 2){
-        yearError.innerHTML = "Ortiqcha raqam yozdingiz!";
+        yearError.innerHTML = "invalid year!!, pls input a valid year";
         $("#input-year").css('outline', '1px solid #FF5050')
         $("#input-year").css('border', 'none')
         $("#year-error").show();
@@ -206,13 +206,13 @@
     }
     const updateinputCode = () => {
       if (inputCode.value.length < 1){
-        codeError.innerHTML = "Parolni kiritish shart!";
+        codeError.innerHTML = "invalid code";
         $("#input-code").css('outline', '1px solid #FF5050')
         $("#input-code").css('border', 'none')
         $("#code-error").show();
       }
       else if (inputCode.value.length > 3){
-        codeError.innerHTML = "Ortiqcha raqam yozdingiz!";
+        codeError.innerHTML = "invalid code";
         $("#input-code").css('outline', '1px solid #FF5050')
         $("#input-code").css('border', 'none')
         $("#code-error").show();
